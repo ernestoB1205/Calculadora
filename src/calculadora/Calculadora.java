@@ -4,17 +4,21 @@
  */
 package calculadora;
 
-/**
- *
- * @author LENOVO
- */
-public class Calculadora {
+import javax.swing.*;              
+import java.awt.*;                
+import java.awt.event.*;          
+import java.util.ArrayList;       
 
-    /**
-     * @param args the command line arguments
-     */
+public class Calculadora extends JFrame {
+    
+    private JTextField campo1, campo2, campoResultado;
+
+    private JButton botonSumar, botonDividir, botonMostrar;
+
+    private ArrayList<Double> resultados;
+
     public static void main(String[] args) {
-        // TODO code application logic here
+       
     }
     
 }
