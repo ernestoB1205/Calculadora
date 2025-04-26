@@ -63,4 +63,24 @@ public class Calculadora extends JFrame {
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setVisible(true);            // Muestra la ventana
     }
+    /**
+     * Método para realizar la suma de dos números ingresados.
+     */
+    private void sumar() {
+        try {
+            // Leer y convertir los textos a números
+            double a = Double.parseDouble(campo1.getText());
+            double b = Double.parseDouble(campo2.getText());
+
+            // Calcular la suma
+            double resultado = a + b;
+
+            // Guardar resultado y mostrar
+            resultados.add(resultado);
+            campoResultado.setText(String.valueOf(resultado));
+
+        } catch (NumberFormatException e) {
+            mostrarError("Ingrese números válidos.");
+        }
+    }
 }
