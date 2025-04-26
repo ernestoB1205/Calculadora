@@ -84,4 +84,27 @@ public class Calculadora extends JFrame {
             mostrarError("Ingrese números válidos.");
         }
     }
+
+    /**
+     * Método para realizar la división de dos números con manejo de errores.
+     */
+    private void dividir() {
+        try {
+            double a = Double.parseDouble(campo1.getText());
+            double b = Double.parseDouble(campo2.getText());
+
+            // Validar que no se divide por cero
+            if (b == 0) throw new ArithmeticException("División por cero.");
+
+            double resultado = a / b;
+
+            resultados.add(resultado);
+            campoResultado.setText(String.valueOf(resultado));
+
+        } catch (NumberFormatException e) {
+            mostrarError("Ingrese números válidos.");
+        } catch (ArithmeticException e) {
+            mostrarError(e.getMessage());
+        }
+    }
 }
